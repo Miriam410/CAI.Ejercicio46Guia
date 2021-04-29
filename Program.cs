@@ -41,6 +41,13 @@ namespace CAI.Ejercicio46Guia
             while (!salir)
             {
                 var precio = Precio.IngresarNuevo();
+
+                if (!productos.ContainsKey(precio.CodigoProducto))
+                {
+                    Console.WriteLine("No se encuentra el producto indicaado.");
+                    continue;
+                }
+
                 if (precios.ContainsKey(precio.CodigoProducto))
                 {
                     Console.WriteLine("Ya ha ingresado un precio para ese producto.");
